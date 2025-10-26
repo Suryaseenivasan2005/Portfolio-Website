@@ -67,3 +67,5 @@ If you want to use EmailJS later, add these in Vercel dashboard:
 
 ## 🚀 Ready to Deploy!
 Your portfolio is production-ready and doesn't require MongoDB for the frontend deployment.
+
+
