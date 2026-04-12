@@ -2,19 +2,20 @@ import { motion } from 'motion/react';
 
 export function Skills() {
   const skills = [
-    { name: 'React', icon: '⚛️', category: 'frontend' },
+    { name: 'JavaScript', icon: '🟨', category: 'language' },
+    { name: 'React.js', icon: '⚛️', category: 'frontend' },
     { name: 'Node.js', icon: '🟢', category: 'backend' },
+    { name: 'Express.js', icon: '🚂', category: 'backend' },
     { name: 'MongoDB', icon: '🍃', category: 'database' },
-    { name: 'TypeScript', icon: '📘', category: 'language' },
-    { name: 'Next.js', icon: '▲', category: 'frontend' },
-    { name: 'Express', icon: '🚂', category: 'backend' },
-    { name: 'PostgreSQL', icon: '🐘', category: 'database' },
-    { name: 'Tailwind CSS', icon: '🎨', category: 'frontend' },
+    { name: 'n8n', icon: '🤖', category: 'devops' },
+    { name: 'Socket.io', icon: '⚡', category: 'backend' },
+    { name: 'REST APIs', icon: '🔗', category: 'tools' },
     { name: 'Docker', icon: '🐳', category: 'devops' },
     { name: 'Git', icon: '📦', category: 'tools' },
-    { name: 'AWS', icon: '☁️', category: 'devops' },
-    { name: 'Redux', icon: '🔄', category: 'frontend' },
+    { name: 'JWT Auth', icon: '🔐', category: 'tools' },
+    { name: 'AI Agents', icon: '🧠', category: 'frontend' },
   ];
+
 
   const categories = [
     { name: 'Frontend', color: '#00ff41' },
@@ -48,8 +49,8 @@ export function Skills() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.1, 
+              whileHover={{
+                scale: 1.1,
                 rotate: [0, -5, 5, -5, 0],
                 transition: { duration: 0.5 }
               }}
@@ -57,13 +58,13 @@ export function Skills() {
             >
               <div className="bg-[#0a0a0a] border-2 border-[#2a2a2a] rounded-lg p-4 h-full flex flex-col items-center justify-center gap-2 transition-all duration-300 group-hover:border-[#00ff41]">
                 {/* Glow effect */}
-                <div 
+                <div
                   className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
                     boxShadow: '0 0 20px rgba(0, 255, 65, 0.5)',
                   }}
                 />
-                
+
                 <div className="text-3xl sm:text-4xl relative z-10">
                   {skill.icon}
                 </div>
@@ -102,9 +103,9 @@ export function Skills() {
               viewport={{ once: true }}
               className="flex items-center gap-2"
             >
-              <div 
+              <div
                 className="w-3 h-3 rounded-full"
-                style={{ 
+                style={{
                   backgroundColor: category.color,
                   boxShadow: `0 0 10px ${category.color}`,
                 }}

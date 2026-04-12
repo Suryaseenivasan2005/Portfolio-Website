@@ -5,35 +5,30 @@ import { ExternalLink, Github } from 'lucide-react';
 export function Projects() {
   const projects = [
     {
-      title: 'Vetti Pechu Chat App',
-      description: 'A real-time chat application built with modern web technologies. Features include user authentication, real-time messaging, group chats, and responsive design.',
-      tech: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
-      link: 'https://vettipechu.vercel.app',
-      github: 'https://github.com/Suryaseenivasan2005/chat-app',
-      featured: true,
-    },
-    {
-      title: 'House Price Prediction',
-      description: 'ML-based house price prediction system using various features to estimate property values with high accuracy. Built with Streamlit for interactive web interface.',
-      tech: ['Python', 'Streamlit', 'Machine Learning', 'Regression', 'Data Analysis'],
-      link: 'https://house-price-prediction-5ehdg4fbeqxyqqctcphrcf.streamlit.app/',
-      github: 'https://github.com/Suryaseenivasan2005/House-price-prediction',
-      featured: true,
-    },
-    {
-      title: 'Gold Price Prediction',
-      description: 'Machine learning model to predict gold prices for future savings using historical data analysis and predictive algorithms.',
-      tech: ['Python', 'Jupyter Notebook', 'Machine Learning', 'Data Analysis'],
+      title: 'AI Productivity Agent System',
+      description:
+        'Architected a modular MERN-based multi-agent platform integrated with n8n to automate complex real-world workflows — job applications, email handling, and stock tracking — through specialised AI agents.',
+      tech: ['Node.js', 'Express.js', 'React.js', 'MongoDB', 'n8n', 'REST APIs'],
       link: '',
-      github: 'https://github.com/Suryaseenivasan2005/gold-price-prediction',
+      github: 'https://github.com/Suryaseenivasan2005/project---december',
+      featured: true,
+    },
+    {
+      title: 'Tex-Tool – Textile Management System',
+      description:
+        'Business management platform with dashboards, inventory tracking, REST APIs, and financial reporting. Built a scalable MongoDB schema for structured financial data and a performant backend.',
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js'],
+      link: 'https://textile-tool.vercel.app',
+      github: 'https://github.com/Suryaseenivasan2005/textile-tool',
       featured: false,
     },
     {
-      title: 'Instagram Clone',
-      description: 'My first React application - a social media platform clone with modern UI/UX design and interactive features.',
-      tech: ['React', 'JavaScript', 'CSS', 'HTML'],
+      title: 'Talklet – Real-Time Chat Application',
+      description:
+        'Event-driven messaging app using Socket.io with JWT authentication. Delivers low-latency real-time messaging with a secure MERN backend and a clean, responsive UI.',
+      tech: ['React.js', 'Node.js', 'Socket.io', 'JWT Auth', 'MongoDB'],
       link: '',
-      github: 'https://github.com/Suryaseenivasan2005/instagram-clone',
+      github: 'https://github.com/Suryaseenivasan2005/chat-app',
       featured: false,
     },
   ];

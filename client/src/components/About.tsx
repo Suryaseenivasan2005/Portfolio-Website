@@ -37,7 +37,7 @@ export function About() {
             <div className="bg-[#0a0a0a] border-2 border-[#00ff41]/30 p-6 rounded-lg relative overflow-hidden">
               {/* Holographic border effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff41]/0 via-[#00ff41]/20 to-[#00ff41]/0 animate-pulse" />
-              
+
               {/* Terminal header */}
               <div className="flex items-center gap-2 mb-4 relative z-10">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -54,16 +54,16 @@ export function About() {
                   $ cat about.txt
                 </p>
                 <p className="text-[#e5e5e5] leading-relaxed">
-                  Hey there! I'm Surya, a B.Tech IT student passionate about full-stack development. 
-                  I love building real-time applications like my Vetti Pechu chat app and exploring 
-                  machine learning with projects like gold price prediction.
+                  I'm Surya — a Full Stack Developer transitioning into AI-driven automation. I specialise
+                  in building multi-agent systems that streamline workflows and eliminate repetitive tasks,
+                  using the MERN stack as my foundation.
                 </p>
                 <p className="text-[#e5e5e5] leading-relaxed mt-4">
-                  From React frontends to Node.js backends, I enjoy the entire development process. 
-                  I'm always learning new technologies and love turning creative ideas into functional 
-                  applications that solve real-world problems.
+                  Strong in API integrations and workflow automation using n8n. Currently building
+                  real-world AI agent systems for productivity and automation. 1st Prize winner —
+                  Idea Hackathon (College Level).
                 </p>
-                <motion.p 
+                <motion.p
                   className="text-[#00ff41] pt-4"
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}

@@ -14,13 +14,13 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
       // EmailJS configuration (you'll need to set up EmailJS account and get these IDs)
       const serviceId = 'service_your_service_id'; // Replace with your EmailJS service ID
       const templateId = 'template_your_template_id'; // Replace with your EmailJS template ID
       const publicKey = 'your_public_key'; // Replace with your EmailJS public key
-      
+
       // Template parameters
       const templateParams = {
         from_name: formData.name,
@@ -32,26 +32,26 @@ export function Contact() {
 
       // Send email using EmailJS
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
+
       // Show success alert
       alert(`Thank you ${formData.name}! Your message has been sent successfully. I'll get back to you soon!`);
-      
+
       // Reset form
       setFormData({
         name: '',
         email: '',
         message: '',
       });
-      
+
     } catch (error) {
       console.error('Error sending message:', error);
-      
+
       // Fallback to mailto if EmailJS fails
       const mailtoLink = `mailto:suryaseenivasan12@gmail.com?subject=Portfolio Contact Form - ${encodeURIComponent(formData.name)}&body=Name: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0AMessage: ${encodeURIComponent(formData.message)}`;
       window.open(mailtoLink);
-      
+
       alert(`Thank you ${formData.name}! Your message has been sent successfully. I'll get back to you soon!`);
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -97,8 +97,8 @@ export function Contact() {
                 Get In Touch
               </h3>
               <p className="text-[#e5e5e5]/70 mb-8">
-                Have a project in mind or just want to chat about tech? 
-                Feel free to reach out! I'm always open to discussing new opportunities 
+                Have a project in mind or just want to chat about tech?
+                Feel free to reach out! I'm always open to discussing new opportunities
                 and interesting projects.
               </p>
 

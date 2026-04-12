@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { ChevronDown, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 export function Hero() {
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'Full-Stack Developer';
+  const fullText = 'AI & Full-Stack Engineer';
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+  const yOrbs = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     let index = 0;
@@ -21,12 +25,19 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Scanline effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff41]/5 to-transparent pointer-events-none z-10 animate-pulse" 
-           style={{ backgroundSize: '100% 4px' }} />
+    <section ref={ref} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Parallax background orbs */}
+      <motion.div style={{ y: yOrbs }} className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#00ff41]/5 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[#00d9ff]/5 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00ff41]/3 blur-[120px]" />
+      </motion.div>
 
-      <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+      {/* Scanline effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff41]/5 to-transparent pointer-events-none z-10 animate-pulse"
+        style={{ backgroundSize: '100% 4px' }} />
+
+      <motion.div style={{ opacity }} className="relative z-20 text-center px-4 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +60,7 @@ export function Hero() {
             >
               SURYA
             </motion.h1>
-            
+
             {/* Glitch layers */}
             <motion.h1
               className="absolute top-0 left-0 right-0 text-6xl sm:text-8xl lg:text-9xl tracking-wider text-[#00d9ff] opacity-70"
@@ -91,8 +102,8 @@ export function Hero() {
             transition={{ delay: 1, duration: 1 }}
             className="text-[#e5e5e5]/80 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg"
           >
-            B.Tech IT student passionate about building real-time applications and exploring machine learning.
-            Creator of Vetti Pechu chat app and ML prediction models.
+            Full Stack Developer specialising in the MERN stack, building multi-agent AI automation systems
+            that streamline workflows and eliminate repetitive tasks. 1st Prize Hackathon winner · Graduating 2027.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -141,13 +152,16 @@ export function Hero() {
             className="flex gap-6 justify-center pt-8"
           >
             {[
-              { Icon: Github, href: 'https://github.com/Suryaseenivasan2005' },
-              { Icon: Linkedin, href: 'https://www.linkedin.com/in/surya-seenivasan-b85249354/' },
-              { Icon: Mail, href: 'mailto:suryaseenivasan12@gmail.com' },
-            ].map(({ Icon, href }, index) => (
+              { Icon: Github, href: 'https://github.com/Suryaseenivasan2005', label: 'GitHub' },
+              { Icon: Linkedin, href: 'https://www.linkedin.com/in/surya-seenivasan-b85249354/', label: 'LinkedIn' },
+              { Icon: Mail, href: 'mailto:suryaseenivasan12@gmail.com', label: 'Email' },
+            ].map(({ Icon, href, label }) => (
               <motion.a
-                key={index}
+                key={label}
                 href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#e5e5e5] hover:text-[#00ff41] transition-colors"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -167,7 +181,7 @@ export function Hero() {
         >
           <ChevronDown className="text-[#00ff41]" size={32} />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

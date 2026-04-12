@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="relative border-t border-[#00ff41]/20 py-12 px-4 mt-20">
       {/* Animated wave */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#00ff41] to-transparent opacity-50" />
-      
+
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Brand */}

@@ -40,7 +40,7 @@ export default function App() {
       <BackToTop />
 
       {/* Grid Overlay */}
-      <div 
+      <div
         className="fixed inset-0 pointer-events-none z-0 opacity-10"
         style={{
           backgroundImage: `

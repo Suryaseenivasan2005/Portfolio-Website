@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import React from 'react';
 
 export function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
